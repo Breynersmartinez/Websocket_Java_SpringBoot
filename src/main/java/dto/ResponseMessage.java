@@ -2,10 +2,17 @@ package dto;
 
 import lombok.Data;
 
-@Data
+
+/**
+ * DTO para mensajes de respuesta.
+ */
+ 
+ // Lombok - genera getters, setters, toString, etc.
+ @Data  
 public class ResponseMessage {
     private String content;
 
+     // constructores
     public ResponseMessage() {
     }
 

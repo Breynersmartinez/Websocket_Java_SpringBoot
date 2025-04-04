@@ -18,20 +18,29 @@ $(document).ready(function() {
     });
 });
 
+
+/**
+ * Establece conexión WebSocket.
+ */
 function connect() {
     var socket = new SockJS('/websocket');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function (frame) {
         console.log('Connected: ' + frame);
         updateNotificationDisplay();
+
+           // Suscripción a mensajes públicos
         stompClient.subscribe('/receive/message', function (message) {
             showMessage(JSON.parse(message.body).content);
         });
 
+             // Suscripción a mensajes privados
         stompClient.subscribe('/user/receive/private-message', function (message) {
             showMessage(JSON.parse(message.body).content);
         });
 
+
+             // Suscripción a notificaciones...
         stompClient.subscribe('/receive/global-notification', function (message) {
             notificationCount = notificationCount + 1;
             updateNotificationDisplay();
@@ -44,10 +53,14 @@ function connect() {
     });
 }
 
+
 function showMessage(message) {
     $("#messages").append("<tr><td>" + message + "</td></tr>");
 }
 
+/**
+ * Envía un mensaje público.
+ */
 function sendMessage() {
     console.log("sending message");
     stompClient.send("/ws/message", {}, JSON.stringify({'messageContent': $("#message").val()}));
