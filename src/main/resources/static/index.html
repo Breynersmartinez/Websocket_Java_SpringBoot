@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello WS</title>
+    <title>Chat WebSocket</title>
     <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="/webjars/jquery/jquery.min.js"></script>
     <script src="/webjars/sockjs-client/sockjs.min.js"></script>
@@ -15,10 +15,10 @@
             <div class="col-md-12">
                 <form class="form-inline">
                     <div class="form-group">
-                        <label for="message">Message</label>
-                        <input type="text" id="message" class="form-control" placeholder="Enter your message here...">
+                        <label for="message">Mensaje</label>
+                        <input type="text" id="message" class="form-control" placeholder="Ingrese su mensaje aquí...">
                     </div>
-                    <button id="send" class="btn btn-default" type="button">Send</button>
+                    <button id="send" class="btn btn-default" type="button">Enviar</button>
                 </form>
             </div>
         </div>
@@ -26,10 +26,10 @@
             <div class="col-md-12">
                 <form class="form-inline">
                     <div class="form-group">
-                        <label for="private-message">Private Message</label>
-                        <input type="text" id="private-message" class="form-control" placeholder="Enter your message here...">
+                        <label for="private-message">Mensaje privado</label>
+                        <input type="text" id="private-message" class="form-control" placeholder="Ingrese su mensaje aquí...">
                     </div>
-                    <button id="send-private" class="btn btn-default" type="button">Send Private Message</button>
+                    <button id="send-private" class="btn btn-default" type="button">Enviar mensaje privado</button>
                 </form>
             </div>
         </div>
@@ -38,7 +38,7 @@
                 <table id="message-history" class="table table-striped">
                     <thead>
                     <tr>
-                        <th>Messages
+                        <th>Mensaje
                             <span
                                     id="notifications"
                                     style="
