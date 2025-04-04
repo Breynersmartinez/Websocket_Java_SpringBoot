@@ -13,6 +13,11 @@ repositories {
 }
 
 dependencies {
+
+	// SpringDoc OpenAPI (Documentación automática + Swagger UI)
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0") // Usa la última versión
+
+
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
